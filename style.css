@@ -1,0 +1,710 @@
+/* *** Custom properties *** */
+:root {
+  --first-dark-color: #323643;
+  --second-color: #93deff;
+  --second-alpha-color: rgba(148, 223, 255, 0.301);
+  --background-color: #f7f7f7;
+  --background-color-black: #202020;
+  --background-alpha-color: rgba(32, 32, 32, 0.4);
+  --text-color-white: #f7f7f7;
+  --text-color-black: #202020;
+  --font-poppins: "Poppins", sans-serif;
+  --header-height: 4rem;
+  --max-widht: 1200px;
+  --border-radius: 0.7rem;
+}
+
+/* ***** Reset ***** */
+html {
+  box-sizing: border-box;
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color-black);
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--text-color);
+  transition: all 0.5s ease-out;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--second-color);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ***** Components ***** */
+
+/* *** MODAL *** */
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--background-alpha-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal[id|="custom"]:target {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 1s;
+}
+
+.modal-acept {
+  background-color: transparent;
+  border: thin solid var(--text-color-black);
+  text-decoration: none;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-acept:hover {
+  background-color: var(--second-color);
+  border: thin solid var(--second-color);
+  color: var(--text-color-black);
+}
+
+.modal-close svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--text-color-black);
+  transition: all 0.5s ease-in-out;
+  border-radius: var(--border-radius);
+}
+
+.modal-close svg:hover {
+  background-color: var(--second-color);
+}
+
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-title h2 {
+  margin: 0 1rem;
+}
+
+/* *** SWITCH THEME *** */
+*:before,
+*:after {
+  content: "";
+  position: absolute;
+}
+
+input[type="checkbox"] {
+  position: fixed;
+}
+
+label.toggle-item {
+  width: 3rem;
+  background: var(--first-dark-color);
+  height: 2rem;
+  border-radius: 50px;
+  position: fixed;
+  right: 1rem;
+  top: calc(var(--header-height) + 1rem);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+label.toggle-item:before {
+  transition: all 0.1s ease;
+  border-radius: 2em;
+}
+
+.transparent label {
+  border: 3px solid var(--first-dark-color);
+}
+
+.transparent label:before {
+  width: 1em;
+  height: 1em;
+  top: 0.3em;
+  left: 0.3em;
+  background: var(--background-color);
+}
+
+#transparent:checked + label:before {
+  transform: translateX(1em);
+  background: var(--background-color);
+  border: 3px solid var(--background-color);
+}
+
+/* ***** Utilities ***** */
+.box-shadow-1 {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.14);
+}
+
+.btn {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--text-color-black);
+  color: var(--text-color-black);
+  background-color: transparent;
+  padding: 0.7rem;
+  width: 280px;
+  font-family: var(--font-poppins);
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 1rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--second-color);
+  border: 1px solid var(--second-color);
+  color: var(--text-color-black);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-widht);
+}
+
+.none {
+  display: none;
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+/* ***** Site Styles ***** */
+.footer {
+  width: 100%;
+  height: 6rem;
+  background-color: var(--first-dark-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer a svg {
+  fill: var(--text-color-white);
+  transition: all 0.5s ease-in-out;
+  margin: 0 auto;
+}
+
+.footer a:hover svg {
+  fill: var(--second-color);
+}
+
+.footer a p {
+  display: none;
+}
+
+.footer aside {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 3rem;
+}
+
+.footer aside a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 1.3rem;
+}
+
+.footer small {
+  font-size: 0.9rem;
+  color: var(--text-color-white);
+  margin: 0.5rem;
+}
+
+.header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--first-dark-color);
+  padding: 0.7rem 2rem;
+}
+
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > .container > .logo a {
+  font-size: 1.5rem;
+  color: var(--text-color-white);
+  font-weight: 600;
+}
+
+.header > .container > .logo a:hover {
+  color: var(--second-color);
+}
+
+.menu .btn {
+  border: 1px solid var(--text-color-white);
+  color: var(--text-color-white);
+  width: 90px;
+  font-size: 1rem;
+  padding: 0.4rem;
+  margin: 0;
+}
+
+.menu .btn:hover {
+  border: 1px solid var(--second-color);
+  color: var(--text-color-black);
+  background-color: var(--second-color);
+}
+
+.modal-timer {
+  position: relative;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.modal-timer h3 {
+  font-weight: 300;
+}
+
+.modal-timer input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--text-color-black);
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 2rem;
+  width: 120px;
+  text-align: center;
+}
+
+.modal-timer input:focus {
+  background-color: var(--second-alpha-color);
+  outline: none;
+}
+
+.modal-task {
+  position: relative;
+  background-color: var(--background-color);
+  width: 500px;
+  height: 300px;
+  border-radius: var(--border-radius);
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-task input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--text-color-black);
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-task input:focus {
+  background-color: var(--second-alpha-color);
+  outline: none;
+}
+
+.pomodoro > .container {
+  display: grid;
+  justify-content: center;
+}
+
+.pomodoro-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.pomodoro-controls {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.pomodoro-control {
+  background-color: transparent;
+  padding: 0;
+  margin: 0 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.pomodoro-control svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--text-color-black);
+  transition: all 0.5s ease-in-out;
+  border-radius: var(--border-radius);
+}
+
+.pomodoro-control svg:hover {
+  background-color: var(--second-color);
+}
+
+.pomodoro-timer {
+  width: 250px;
+  font-size: 6rem;
+  font-family: "Lato", sans-serif;
+  margin: 2rem auto 1rem auto;
+  text-align: center;
+}
+
+.pomodoro-timer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: medium solid var(--text-color-black);
+  border-top: medium solid var(--text-color-black);
+  margin: 0.5rem 0;
+}
+
+.pomodoro-timer div p {
+  margin: 0;
+}
+
+.task {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--text-color-black);
+  color: var(--text-color-black);
+  background-color: transparent;
+  padding: 0.7rem;
+  width: 280px;
+  font-family: var(--font-poppins);
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 1rem auto;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.task:hover {
+  color: var(--text-color-black);
+  background: var(--second-alpha-color);
+}
+
+.task div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task path {
+  pointer-events: none;
+}
+
+.task svg {
+  fill: var(--text-color-black);
+  background: transparent;
+}
+
+.task-button {
+  background-color: transparent;
+  border: thin solid var(--text-color-black);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease-in-out;
+}
+
+.task-button:hover {
+  background-color: var(--second-color);
+  border: thin solid var(--second-color);
+}
+
+.task-add-details {
+  display: flex;
+  justify-content: center;
+}
+
+.task-add-details p {
+  margin: 0;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.through {
+  text-decoration: line-through;
+}
+
+.to-do > .container {
+  width: 100%;
+  display: grid;
+}
+
+.to-do > .container > .btn {
+  margin: 1.2rem auto;
+}
+
+.to-do > .container > .btn svg {
+  fill: var(--text-color-black);
+  pointer-events: none;
+}
+
+.work-steps {
+  display: grid;
+  grid-template-columns: 280px;
+  align-content: center;
+  justify-items: center;
+  margin: 1rem;
+}
+
+.work-step {
+  width: 280px;
+  height: 150px;
+}
+
+.work-step p {
+  margin: 0;
+  padding-left: 3rem;
+}
+
+.work-title {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.work-title p {
+  background-color: var(--second-color);
+  color: var(--background-color-black);
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.work-title h3 {
+  padding: 0 1rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer a p {
+    display: initial;
+    color: var(--text-color-white);
+    padding: 0 0.5rem;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .footer a:hover p {
+    color: var(--second-color);
+  }
+
+  .pomodoro > .container {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(2, 30%);
+  }
+
+  .to-do > .container {
+    grid-template-columns: repeat(2, 30%);
+    justify-content: space-around;
+  }
+
+  .to-do h2 {
+    grid-column: span 2;
+  }
+
+  .work-steps {
+    grid-template-columns: repeat(2, 280px);
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 0.8rem 2rem;
+  }
+
+  .pomodoro > .container {
+    justify-content: center;
+  }
+
+  .to-do > .container {
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-around;
+  }
+
+  .to-do h2 {
+    grid-column: span 3;
+  }
+
+  .work-steps {
+    grid-template-columns: repeat(3, 280px);
+    justify-content: space-around;
+  }
+}
+
+/* ***** Dark Theme ***** */
+.dark {
+  background-color: var(--background-color-black);
+  color: var(--text-color-white);
+}
+
+body.dark .box-shadow-1 {
+  box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.14);
+}
+
+/* BTN */
+body.dark .btn {
+  border: 1px solid var(--text-color-white);
+  color: var(--text-color-white);
+}
+
+body.dark .btn:hover {
+  border: 1px solid var(--second-color);
+  color: var(--text-color-black);
+}
+
+/* MODAL ADD TASK */
+body.dark .modal-task {
+  background-color: var(--background-color-black);
+}
+
+body.dark .modal-task input {
+  border-bottom: 2px solid var(--text-color-white);
+  color: var(--text-color-white);
+}
+
+/* MODAL TIMER */
+body.dark .modal-acept {
+  border: thin solid var(--text-color-white);
+}
+
+body.dark .modal-close svg {
+  fill: var(--text-color-white);
+}
+
+body.dark .modal-timer {
+  background-color: var(--background-color-black);
+}
+
+body.dark .modal-timer h3 {
+  color: var(--text-color-white);
+}
+
+body.dark .modal-timer input {
+  border-bottom: 2px solid var(--text-color-white);
+  color: var(--text-color-white);
+}
+
+/* TIMER */
+body.dark .pomodoro-timer div {
+  border-bottom: medium solid var(--text-color-white);
+  border-top: medium solid var(--text-color-white);
+}
+
+body.dark .pomodoro-control svg {
+  fill: var(--text-color-white);
+}
+
+body.dark .pomodoro-control svg:hover {
+  fill: var(--text-color-black);
+}
+
+/* TASK */
+body.dark .task {
+  border: 1px solid var(--text-color-white);
+  color: var(--text-color-white);
+}
+
+body.dark .task:hover {
+  color: var(--text-color-white);
+}
+
+body.dark .task svg {
+  fill: var(--text-color-white);
+  background: transparent;
+}
+
+body.dark .task-button {
+  border: thin solid var(--text-color-white);
+}
+
+body.dark .task-button:hover {
+  background-color: var(--second-color);
+  border: thin solid var(--second-color);
+}
+
+body.dark .task-button:hover svg {
+  fill: var(--text-color-black);
+}
+
+body.dark .to-do > .container > .btn svg {
+  fill: var(--text-color-white);
+}
+
+body.dark .to-do > .container > .btn:hover svg {
+  fill: var(--text-color-black);
+}
