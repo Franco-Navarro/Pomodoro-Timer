@@ -222,6 +222,12 @@ label.toggle-item:before {
   max-width: var(--max-widht);
 }
 
+.display {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 1s;
+}
+
 .none {
   display: none;
 }
@@ -310,6 +316,50 @@ label.toggle-item:before {
   border: 1px solid var(--second-color);
   color: var(--text-color-black);
   background-color: var(--second-color);
+}
+
+.modal-delete{
+  position: relative;
+  background-color: var(--background-color);
+  width: 500px;
+  height: 200px;
+  border-radius: var(--border-radius);
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.modal-delete-button{
+  background-color: transparent;
+  border: thin solid var(--text-color-black);
+  text-decoration: none;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  margin: 0 2rem;
+  font-family: var(--font-poppins);
+  font-size: 1.2rem;
+  color: var(--text-color-black);
+  cursor: pointer;
+}
+
+.modal-delete-button:hover{
+  background-color: var(--second-color);
+  border: thin solid var(--second-color);
+  color: var(--text-color-black);
+}
+
+.modal-delete-container {
+  display: flex;
+  margin: 1rem 0;
 }
 
 .modal-timer {
@@ -445,12 +495,6 @@ label.toggle-item:before {
   text-align: center;
   margin: 1rem auto;
   transition: all 0.5s ease;
-  cursor: pointer;
-}
-
-.task:hover {
-  color: var(--text-color-black);
-  background: var(--second-alpha-color);
 }
 
 .task div {
@@ -472,6 +516,7 @@ label.toggle-item:before {
   border: thin solid var(--text-color-black);
   border-radius: var(--border-radius);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .task-button:hover {
@@ -642,6 +687,11 @@ body.dark .modal-acept {
   border: thin solid var(--text-color-white);
 }
 
+body.dark .modal-acept:hover {
+  border: 1px solid var(--second-color);
+  color: var(--text-color-black);
+}
+
 body.dark .modal-close svg {
   fill: var(--text-color-white);
 }
@@ -708,3 +758,19 @@ body.dark .to-do > .container > .btn svg {
 body.dark .to-do > .container > .btn:hover svg {
   fill: var(--text-color-black);
 }
+
+body.dark .modal-delete{
+  background-color: var(--background-color-black);
+  color: var(--text-color-white);
+}
+
+body.dark .modal-delete-button{
+  border: thin solid var(--text-color-white);
+  color: var(--text-color-white);
+}
+
+body.dark .modal-delete-button:hover{
+  color: var(--text-color-black);
+  border: thin solid var(--second-color);
+}
+
