@@ -5,7 +5,7 @@
   --second-alpha-color: rgba(148, 223, 255, 0.301);
   --background-color: #f7f7f7;
   --background-color-black: #202020;
-  --background-alpha-color: rgba(32, 32, 32, 0.4);
+  --background-alpha-color: rgba(32, 32, 32, 0.6);
   --text-color-white: #f7f7f7;
   --text-color-black: #202020;
   --font-poppins: "Poppins", sans-serif;
@@ -37,7 +37,7 @@ body {
 
 a {
   color: var(--text-color);
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
   text-decoration: none;
 }
 
@@ -100,7 +100,7 @@ p {
 .modal[id|="custom"]:target {
   opacity: 1;
   pointer-events: auto;
-  transition: all 1s;
+  transition: all 0.2s;
 }
 
 .modal-acept {
@@ -658,7 +658,7 @@ label.toggle-item:before {
 }
 
 body.dark .box-shadow-1 {
-  box-shadow: 0px 5px 10px rgba(200, 200, 200, 0.14);
+  box-shadow: 0px 5px 10px rgba(112, 112, 112, 0.14);
 }
 
 /* BTN */
@@ -673,6 +673,11 @@ body.dark .btn:hover {
 }
 
 /* MODAL ADD TASK */
+
+body.dark .modal {
+  background-color: rgba(71, 140, 170, 0.233);
+}
+
 body.dark .modal-task {
   background-color: var(--background-color-black);
 }
