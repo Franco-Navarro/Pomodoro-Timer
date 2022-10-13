@@ -38,24 +38,24 @@
     d.title = "Pomodoro Timer";
   }
 
-  $pomodoroButton.addEventListener("click", (e) => {
+  $pomodoroButton.addEventListener("click", () => {
     $minutesSelector.innerText = $pomodoroTime.value;
     $minutesSelector.setAttribute("value", "1");
     timerStop();
   });
-  $shortButton.addEventListener("click", (e) => {
+  $shortButton.addEventListener("click", () => {
     $minutesSelector.innerText = $shortTime.value;
     $minutesSelector.setAttribute("value", "2");
     timerStop();
   });
-  $longButton.addEventListener("click", (e) => {
+  $longButton.addEventListener("click", () => {
     $minutesSelector.innerText = $longTime.value;
     $minutesSelector.setAttribute("value", "3");
     timerStop();
   });
 
   // Cargar los valores del menu custom
-  $aceptButton.addEventListener("click", (e) => {
+  $aceptButton.addEventListener("click", () => {
     if ($minutesSelector.getAttribute("value") == "1") {
       $minutesSelector.innerText = $pomodoroTime.value;
       timerStop();
@@ -68,7 +68,7 @@
     }
   });
 
-  $play.addEventListener("click", (e) => {
+  $play.addEventListener("click", () => {
     let minutes = $minutesSelector.textContent;
     let seconds = $secondsSelector.textContent;
 
@@ -98,13 +98,13 @@
     }, 1000);
   });
 
-  $pause.addEventListener("click", (e) => {
+  $pause.addEventListener("click", () => {
     $play.classList.remove("none");
     $pause.classList.add("none");
     clearInterval(timer);
   });
 
-  $stop.addEventListener("click", (e) => {
+  $stop.addEventListener("click", () => {
     timerStop();
     $minutesSelector.innerText = $pomodoroTime.value;
   });
@@ -117,7 +117,7 @@
     $contentTask = d.querySelector("#cont-task"),
     $taskContainer = d.querySelector("#to-do-container");
 
-  $addTask.addEventListener("click", (e) => {
+  $addTask.addEventListener("click", () => {
     if ($contentTask.value != 0) {
       let a = d.createElement("A");
       let div = d.createElement("DIV");
