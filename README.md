@@ -1,11 +1,13 @@
-# Pomodoro-Timer
+# Pomodoro Timer
 
-Pomodoro es un método para mejorar la administración del tiempo dedicado a una actividad. Usando intervalos de 25 minutos de trabajo y 5 minutos de descanso
+Pomodoro es un método para mejorar la administración del tiempo dedicado a una actividad. Usando intervalos de 25 minutos de trabajo y 5 minutos de descanso.
 
-## WebSite.
+Este proyecto busca dar una interfaz donde se puedan controlar el tiempo de los intervalos y las tareas que se van a realizar en estos.
 
-[Pomodoro Timer](https://franco-navarro.github.io/Pomodoro-Timer/).
+[Abrir Web](https://franco-navarro.github.io/Pomodoro-Timer/)
 
 ## Construido con 🛠️.
 
-HTML, CSS y JS Vanilla.
+- HTML
+- CSS
+- JS Vanilla.
